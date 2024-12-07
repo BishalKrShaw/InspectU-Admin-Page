@@ -1,0 +1,20 @@
+.all-employees-container {
+  background-color: #FCFCFA;
+  border-radius: 50px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.stats-headings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+  border-bottom: 1px dashed #888888;
+}
+
+.stats-headings div {
+  font-size: 0.8rem;
+  color: #4b4b4a;
+}

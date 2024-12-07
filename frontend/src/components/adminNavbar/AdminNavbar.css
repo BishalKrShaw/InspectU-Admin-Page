@@ -1,0 +1,12 @@
+
+.adminNavbar {
+  margin-bottom: 50px;
+}
+
+.adminNavbar span {
+  border: 1px solid #ABACAE;
+  padding: 10px;
+  border-radius: 50px;
+  color: #3e3e3f;
+  font-size: 1.5rem;
+}

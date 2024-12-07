@@ -1,0 +1,16 @@
+.employees-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #313131;
+  margin-block: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.employees-stats:hover {
+  background-color: #FFD85F;
+}

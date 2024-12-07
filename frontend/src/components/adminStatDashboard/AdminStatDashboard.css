@@ -1,0 +1,31 @@
+
+.adminStatDashboard {
+  background-color: #F7F6F2;
+  margin-top: 30px;
+  border-radius: 50px;
+  z-index: 99;
+  padding-top: 20px;
+}
+
+.search-bar {
+  margin-inline: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  background-color: #fff;
+  width: 250px;
+  padding: 10px 10px;
+  border-radius: 50px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #494949;
+}
+
+.search-bar input::placeholder {
+  font-size: 0.8rem;
+}

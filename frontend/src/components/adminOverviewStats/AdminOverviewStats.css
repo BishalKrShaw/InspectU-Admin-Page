@@ -1,0 +1,40 @@
+
+.overview {
+  margin-top: 50px;
+}
+
+.overview h1 {
+  font-weight: 200;
+}
+
+.overview-stats {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+}
+
+.overview-stats p {
+  font-size: 0.8rem;
+}
+
+.alert-count div {
+  margin-top: 10px;
+  background-color: #303030;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  width: 100px;
+}
+
+.user-count div {
+  margin-top: 10px;
+  background-color: #FFD85F;
+  color: #303030;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  width: 300px;
+}
