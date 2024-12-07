@@ -15,10 +15,6 @@ function EmployeesStatsDashboard() {
 
       {/* All Employees Stats */}
       <SingleEmployeeStats/>
-      <SingleEmployeeStats/>
-      <SingleEmployeeStats/>
-      <SingleEmployeeStats/>
-      <SingleEmployeeStats/>
 
     </div>
   )

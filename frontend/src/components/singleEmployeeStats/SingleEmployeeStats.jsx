@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./SingleEmployeeStats.css"
+import axios from "axios"
 
 function SingleEmployeeStats() {
+
+  const [employeeData, setEmployeeData] = useState([]);
+
+  const EMPLOYEE_API = "https://localhost:27017/employees";
+
+  const fetchEmployeeData = async () => {
+    try {
+      const rawData = await axios.get(EMPLOYEE_API);
+      setEmployeeData(rawData.data);
+      console.log(rawData.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
+  useEffect(() => {
+    fetchEmployeeData();
+  }, [])
+
   return (
     <div className="employees-stats">
         <div className="number" style={{width: "10%"}}>1</div>
