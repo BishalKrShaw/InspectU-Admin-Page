@@ -1,15 +1,21 @@
 import express from "express"
 import cors from "cors"
+import employeeRouter from "./routes/employeeRouter.js"
+import {connectMongoDB} from "./db.js"
 
 const app = express();
 app.use(cors());
 
+// Database Connection
+connectMongoDB().then(() => console.log("MongoDB connected"));
+
+// Middlewares
+app.use(express.urlencoded({ extended: false }))
+
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Home");
-})
+app.use("/admin", employeeRouter);
 
 app.listen(PORT, () => {
-  console.log("Server is running");
+  console.log(`Server is running at PORT ${PORT}`);
 })
