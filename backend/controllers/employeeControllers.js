@@ -1,10 +1,12 @@
 import { Employee } from "../models/employee.model.js";
 
+// GET Method
 const adminGet = async (req, res) => {
   const allEmployees = await Employee.find({});
   return res.json(allEmployees);
 }
 
+// POST Method
 const adminPost = async (req, res) => {
   const {fullname, employeeID, role, alertStatus} = req.body;
 

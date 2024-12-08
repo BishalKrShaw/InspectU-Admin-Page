@@ -10,7 +10,7 @@ app.use(cors());
 connectMongoDB().then(() => console.log("MongoDB connected"));
 
 // Middlewares
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false })) // Get data from request body
 
 const PORT = 3000;
 

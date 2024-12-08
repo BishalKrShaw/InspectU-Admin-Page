@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <Admin/>
+      <h1>APP hai ye</h1>
     </>
   )
 }
