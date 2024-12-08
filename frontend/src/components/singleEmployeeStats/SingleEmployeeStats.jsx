@@ -33,7 +33,7 @@ function SingleEmployeeStats() {
             {employee.role}
           </div>
           <div className="alert" style={{ width: "20%" }}>
-            {employee.alertStatus}
+            {employee.alertStatus === "Good" ? <span className="goodAlert">{employee.alertStatus}</span> : <span className="badAlert">{employee.alertStatus}</span>}
           </div>
         </div>
       ))

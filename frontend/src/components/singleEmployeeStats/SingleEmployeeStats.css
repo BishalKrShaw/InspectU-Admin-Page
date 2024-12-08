@@ -14,3 +14,17 @@
 .employees-stats:hover {
   background-color: #FFD85F;
 }
+.alert span{
+  padding: 5px 20px;
+  border-radius: 50px;
+  width: calc();
+}
+
+.goodAlert {
+  background-color: #ffbf5f9d;
+}
+
+.badAlert {
+  background-color: rgba(255, 49, 49, 0.836);
+  color: white;
+}
