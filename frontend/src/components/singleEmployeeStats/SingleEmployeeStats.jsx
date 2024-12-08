@@ -8,7 +8,15 @@ function SingleEmployeeStats() {
 
   useEffect(() => {
     dispatch(fetchEmployeeDatas());
-  }, []);
+
+    // Fetch data after every 5 seconds
+    const interval = setInterval(() => {
+      dispatch(fetchEmployeeDatas());
+    }, 10000);
+
+    return () => clearInterval(interval); // Cleaning data
+
+  }, [dispatch]);
 
   const employeeData = useSelector((state) => state.employee);
 
