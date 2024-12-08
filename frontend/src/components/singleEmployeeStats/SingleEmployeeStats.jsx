@@ -1,36 +1,43 @@
-import React, { useEffect, useState } from 'react'
-import "./SingleEmployeeStats.css"
-import axios from "axios"
+import React, { useEffect, useState } from "react";
+import "./SingleEmployeeStats.css";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchEmployeeDatas } from "../../slices/employeeSlice.js";
 
 function SingleEmployeeStats() {
+  const dispatch = useDispatch();
 
-  const [employeeData, setEmployeeData] = useState([]);
-
-  const EMPLOYEE_API = "https://localhost:27017/employees";
-
-  const fetchEmployeeData = async () => {
-    try {
-      const rawData = await axios.get(EMPLOYEE_API);
-      setEmployeeData(rawData.data);
-      console.log(rawData.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  
   useEffect(() => {
-    fetchEmployeeData();
-  }, [])
+    dispatch(fetchEmployeeDatas());
+  }, []);
+
+  const employeeData = useSelector((state) => state.employee);
+
+  if (employeeData.isLoading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
-    <div className="employees-stats">
-        <div className="number" style={{width: "10%"}}>1</div>
-        <div className="name" style={{width: "30%"}}>Bishal Kumar Shaw</div>
-        <div className="employee-id" style={{width: "20%"}}>2721489</div>
-        <div className="role" style={{width: "20%"}}>Full Stack Developer</div>
-        <div className="alert" style={{width: "20%"}}>All good</div>
-      </div>
-  )
+    
+      employeeData.data.map((employee, index) => (
+        <div className="employees-stats" key={employee.id}>
+          <div className="number" style={{ width: "10%" }}>
+            {index+1}
+          </div>
+          <div className="name" style={{ width: "30%" }}>
+            {employee.fullname}
+          </div>
+          <div className="employee-id" style={{ width: "20%" }}>
+            {employee.employeeID}
+          </div>
+          <div className="role" style={{ width: "20%" }}>
+            {employee.role}
+          </div>
+          <div className="alert" style={{ width: "20%" }}>
+            {employee.alertStatus}
+          </div>
+        </div>
+      ))
+  );
 }
 
-export default SingleEmployeeStats
+export default SingleEmployeeStats;

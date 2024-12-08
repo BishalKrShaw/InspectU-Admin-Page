@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false })) // Get data from request body
 
 const PORT = 3000;
 
-app.use("/admin", employeeRouter);
+app.use("/api/admin", employeeRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running at PORT ${PORT}`);
